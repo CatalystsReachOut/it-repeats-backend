@@ -4,7 +4,8 @@ class QuestionPaper {
 
     constructor(departmentName, semester, subjectName, year, examName, fileUrl) {
         this.departmentName = departmentName;
-        this.semester = subjectName;
+        this.semester = semester;
+        this.subjectName = subjectName;
         this.year = year;
         this.examName = examName;
         this.fileUrl = fileUrl;

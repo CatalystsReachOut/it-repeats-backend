@@ -13,7 +13,7 @@ class QuestionPaper {
 
     async save() {
         return db.collection('questionPaper').add({
-            'departmentName': this.medicineAddress,
+            'departmentName': this.departmentName,
             'semester': this.semester,
             'subjectName': this.subjectName,
             'year': this.year,
@@ -30,10 +30,8 @@ class QuestionPaper {
         })
     }
 
-
-
-    async get() {
-        return db.collection('medicines').get().then((snapshot) => {
+    async find() {
+        return db.collection('questionPapers').get().then((snapshot) => {
             let medicines = [];
             snapshot.forEach((doc) => {
                 medicines.push(doc.data());

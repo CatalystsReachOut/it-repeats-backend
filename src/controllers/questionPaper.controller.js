@@ -1,6 +1,7 @@
 import QuestionPaper from '../models/questionPaper.model.js';
 
 const saveQuestionPaper = async (req, res) => {
+    console.log("Hello");
     let questionPaper = new QuestionPaper(req.body.departmentName, req.body.semester, req.body.subjectName, req.body.year, req.body.examName, req.body.fileUrl);
     let returnValue = await questionPaper.save();
     if (returnValue) {
@@ -13,7 +14,8 @@ const saveQuestionPaper = async (req, res) => {
             'message': 'Saved!',
             'error': true
         });
-    }
+        console.log("Hello")
+        }
 }
 
 export { saveQuestionPaper };

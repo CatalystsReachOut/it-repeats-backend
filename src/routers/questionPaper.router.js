@@ -1,10 +1,9 @@
 import { Router } from 'express';
-import { saveQuestionPaper } from '../controllers/questionPaper.controller'
+import { saveQuestionPaper, getQuestionPaper } from '../controllers/questionPaper.controller'
 
 const questionPaperRouter = Router();
 
 questionPaperRouter.route('/save-details').post(saveQuestionPaper);
-questionPaperRouter.route('/save-details').post(getQuestionPaper);
-
+questionPaperRouter.route('/').get(getQuestionPaper);
 
 export default questionPaperRouter;

@@ -31,7 +31,7 @@ class QuestionPaper {
     }
 
     async find() {
-        return db.collection('questionPapers').get().then((snapshot) => {
+        return db.collection('questionPaper').get().then((snapshot) => {
             let medicines = [];
             snapshot.forEach((doc) => {
                 medicines.push(doc.data());

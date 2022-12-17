@@ -18,4 +18,24 @@ const saveQuestionPaper = async (req, res) => {
         }
 }
 
-export { saveQuestionPaper };
+
+const getQuestionPaper = async (req, res) => {
+    
+    let questionPaper = new QuestionPaper();
+    let returnValue = await questionPaper.find();
+    if (returnValue) {
+        res.status(201).send({
+            'message': 'Saved!',
+            'error': false,
+            returnValue
+        });
+    } else {
+        res.status(201).send({
+            'message': 'Saved!',
+            'error': true
+        });
+        console.log("Hello")
+        }
+}
+
+export { saveQuestionPaper, getQuestionPaper};

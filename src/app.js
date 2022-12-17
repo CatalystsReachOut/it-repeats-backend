@@ -4,7 +4,7 @@ import path from 'path';
 import morgan from 'morgan';
 import { urlencoded, json } from 'body-parser';
 import cors from 'cors';
-import routers from './routers/index.route.js';
+ 
 
 const app = express();
 let accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' });

@@ -1,4 +1,3 @@
-
 import admin from "firebase-admin";
 import serviceAccount from "./serviceAccountKey.json";
 
@@ -7,5 +6,4 @@ admin.initializeApp({
 });
 
 const db = admin.firestore();
-
 export default db;

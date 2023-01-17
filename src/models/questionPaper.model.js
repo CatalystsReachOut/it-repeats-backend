@@ -2,15 +2,16 @@ import db from '../db/init';
 
 class QuestionPaper {
 
-    constructor(departmentName, semester, subjectName, year, examName, fileUrl) {
+    constructor(departmentName, semester, subjectName, year, examName, fileUrl,uid,fileName,qid) {
         this.departmentName = departmentName;
         this.semester = semester;
         this.subjectName = subjectName;
         this.year = year;
         this.examName = examName;
         this.fileUrl = fileUrl;
+        this.uid=uid;
+        this.fileName=fileName;
     }
-
     async save() {
         return db.collection('questionPaper').add({
             'departmentName': this.departmentName,
@@ -18,7 +19,9 @@ class QuestionPaper {
             'subjectName': this.subjectName,
             'year': this.year,
             'examName': this.examName,
-            'fileUrl': this.fileUrl
+            'fileUrl': this.fileUrl,
+            'uid':this.uid,
+            'fileName':this.fileName
         }).then(() => {
             return new Promise((resolve, reject) => {
                 resolve(true)
@@ -32,12 +35,12 @@ class QuestionPaper {
 
     async find() {
         return db.collection('questionPapers').get().then((snapshot) => {
-            let medicines = [];
+            let papers = [];
             snapshot.forEach((doc) => {
-                medicines.push(doc.data());
+                papers.push(doc.data());
             });
             return new Promise((resolve, reject) => {
-                resolve(medicines);
+                resolve(papers);
             })
         }).catch((e) => {
             return new Promise((resolve, reject) => {

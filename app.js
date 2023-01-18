@@ -20,7 +20,7 @@ app.use(morgan('combined', { stream: accessLogStream }));
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
-app.use(express.json())
+app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(json());
 

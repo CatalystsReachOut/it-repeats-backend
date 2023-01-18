@@ -28,4 +28,7 @@ app.use(json());
 //routes for api calls
 app.use('/api/question-paper', routers);
 app.use('/api/user',userroutes);
+app.get("/",function(req,res){
+    res.send("Hello welcome");
+})
 export default app;

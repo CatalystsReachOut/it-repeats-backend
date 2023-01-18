@@ -4,8 +4,8 @@ import path from 'path';
 import morgan from 'morgan';
 import bodyParser, { urlencoded, json } from 'body-parser';
 import cors from 'cors';
-import routers from './src/routers/index.route.js';
-import userroutes from "./src/routers/userrouter.js";
+import routers from './routers/index.route.js';
+import userroutes from "./routers/userrouter.js";
 import cookieParser from "cookie-parser"
 
 //app initialization

@@ -19,10 +19,9 @@ app.use(bodyParser.raw({ type: 'application/octet-stream' }));
 app.use(morgan('combined', { stream: accessLogStream }));
 app.use(cors());
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.json())
 app.use(express.urlencoded({extended:true}));
-app.use(urlencoded({ extended: false }));
 app.use(json());
 
 //routes for api calls

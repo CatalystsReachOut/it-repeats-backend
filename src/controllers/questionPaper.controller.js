@@ -1,5 +1,5 @@
 import QuestionPaper from '../models/questionPaper.model.js';
-import db from '../db/init';
+import db from '../db/init.js';
 import fs from 'fs'
 import admin from "firebase-admin"
 const storage=admin.storage();

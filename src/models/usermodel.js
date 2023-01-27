@@ -1,4 +1,4 @@
-import db from "../db/init";
+import db from "../db/init.js";
 class User {
     constructor(Name,username,password){
         this.Name=Name;

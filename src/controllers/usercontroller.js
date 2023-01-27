@@ -1,5 +1,5 @@
 // import db from "../db/init";
-import User from "../models/usermodel";
+import User from "../models/usermodel.js";
 import * as firebase from "firebase/app"
 import {createUserWithEmailAndPassword,getAuth,signInWithEmailAndPassword} from "firebase/auth";
 
